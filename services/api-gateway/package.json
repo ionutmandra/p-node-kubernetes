@@ -1,0 +1,19 @@
+{
+  "name": "api-gateway",
+  "version": "0.0.1",
+  "private": true,
+  "description": "API Gateway",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --watch api index.js"
+  },
+  "dependencies": {
+    "express": "4.15.4",
+    "nodemon": "^2.0.3",
+    "swagger-client": "3.1.1",
+    "swagger-express-mw": "0.7.0",
+    "swagger-ui-dist": "3.1.5",
+    "winston": "2.3.1"
+  }
+}

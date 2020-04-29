@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Microservices with Node.js and Kubernetes
+name: services
+version: 0.1.0
