@@ -4,8 +4,11 @@ Demonstrating a HTTP based microservices and API gateway with Kubernetes, Helm, 
 
 ## Local development
 
-  - Nodemon + docker compose + volume bind mounts -> containers use controllers api code from outside container -> live changes
-  - Multi stage build -> smaller production image
+Nodemon + docker compose + volume bind mounts -> containers use controllers api code from outside container -> live changes
+  
+## Production images TODO
+
+Multi stage build -> smaller production image
 
 
 ## Docker
