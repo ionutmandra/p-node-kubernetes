@@ -2,6 +2,12 @@
 
 Demonstrating a HTTP based microservices and API gateway with Kubernetes, Helm, Swagger, docker compose, nodemon, multi stage builds  - started from https://github.com/RisingStack/webinar-kubernetes-api-gateway
 
+## Local development
+
+  - Nodemon + docker compose + volume bind mounts -> containers use controllers api code from outside container -> live changes
+  - Multi stage build -> smaller production image
+
+
 ## Docker
 ```
 docker compose
