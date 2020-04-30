@@ -128,3 +128,12 @@ create users roles
 Watch
   kubectl get pods --watch
 ```
+
+## TODOS:
+- JAEGER tracing
+- K8s bind mounts for local dev
+- Multistage build
+- Service Mesh
+- GRPC
+- Cloud deploy
+- Automated tests
