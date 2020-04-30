@@ -4,7 +4,7 @@
 # Builds and pushes Docker images to DockerHub
 
 TAG=$1
-TAG=${TAG:-"latest"}
+TAG=${TAG:-"v3"}
 
 cd ../services/api-gateway
 docker build -t p-node-kubernetes_api-gateway:$TAG .

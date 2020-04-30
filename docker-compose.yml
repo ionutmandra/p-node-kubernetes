@@ -9,8 +9,8 @@ services:
      - "14268:14268"
     image: jaegertracing/all-in-one:latest
   api-gateway:
-    depends_on:
-       - user-api
+    # depends_on:
+    #    - user-api
     build: services/api-gateway
     restart: on-failure
     ports:
@@ -22,7 +22,8 @@ services:
     volumes: 
       - ./services/api-gateway/api:/wdir/api
       # map local './services/api-gateway/api' folder to container '/wdir/api'
-    command: sh -c "npm run dev"
+      # command: sh -c "npm run dev"
+    image: "p-node-kubernetes_api-gateway:v3"
   user-api:
     build: services/user-api
     restart: on-failure
@@ -32,5 +33,6 @@ services:
       JAEGER_HOST: jaeger
     volumes: 
       - ./services/user-api/api:/wdir/api
-    command: sh -c "npm run dev"
+    # command: sh -c "npm run dev"
+    image: "p-node-kubernetes_user-api:v3"
 

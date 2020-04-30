@@ -2,7 +2,6 @@
 
 const jaeger = require('jaeger-client')
 const UDPSender = require('jaeger-client/dist/src/reporters/udp_sender').default
-const Instrument = require('@risingstack/opentracing-auto')
 
 const sampler = new jaeger.RateLimitingSampler(10)
 const reporter = new jaeger.RemoteReporter(new UDPSender({
@@ -11,10 +10,10 @@ const reporter = new jaeger.RemoteReporter(new UDPSender({
 const tracer = new jaeger.Tracer('user-api', reporter, sampler)
 
 // eslint-disable-next-line
-new Instrument({
-  tracers: [tracer],
-  httpTimings: true
-})
+// new Instrument({
+//   tracers: [tracer],
+//   httpTimings: true
+// })
 
 require('./server')
 

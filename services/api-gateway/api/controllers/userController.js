@@ -33,7 +33,7 @@ async function get (req, res, next) {
 }
 
 /**
-* Singleton that resolves User API client 
+* Singleton that resolves User API client
 * @function getUserClient
 * @param {Promise} client - swagger client
 */

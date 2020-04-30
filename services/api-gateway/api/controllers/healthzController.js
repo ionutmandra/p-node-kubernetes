@@ -9,7 +9,7 @@
 */
 function get (req, res, next) {
   res.json({
-    status: 'ok from api gtw v11'
+    status: 'ok from api gtw v20'
   })
   next()
 }

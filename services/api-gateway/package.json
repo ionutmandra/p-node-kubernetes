@@ -6,14 +6,24 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon --watch api index.js"
+    "dev": "nodemon --watch api index.js",
+    "lint": "eslint api"
   },
   "dependencies": {
     "express": "4.15.4",
-    "nodemon": "^2.0.3",
     "swagger-client": "3.1.1",
     "swagger-express-mw": "0.7.0",
     "swagger-ui-dist": "3.1.5",
     "winston": "2.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-config-airbnb-base": "11.3.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-react": "7.2.0",
+    "nodemon": "^2.0.3"
   }
 }
