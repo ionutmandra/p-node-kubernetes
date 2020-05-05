@@ -5,6 +5,16 @@ Demonstrating a HTTP based microservices and API gateway with Kubernetes, Helm, 
 ## Local development
 
 Nodemon + docker compose + volume bind mounts -> containers use controllers api code from outside container -> live changes
+
+## Logging
+### Disk location for logs, when using docker for desktop on Mac:
+Assume container id = 09e3cc062441 (either started with Docker Compose either K8s deployment)
+
+To find location on disk for the log file do `docker inspect -f {{.LogPath}} 09e3cc062441` -> /var/lib/docker/containers/09e..7b9/09e..e27b9-json.log
+
+As containers are run in a vm (Docker desktop), do a full screen into the vm: `screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty`
+
+Now, look at you log file `cat ../var/lib/docker/containers/09e...7b9/09e...e27b9-json.log`
   
 ## Production images TODO
 
@@ -73,11 +83,13 @@ cluster
   kubectl cluster-info
 dashboard 
   installs a pod into a new ns kubernetes-dashboard
-      kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml
-  kubectl proxy to start dashboard + (http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.)
-  kubectl get secrets                                  # get for 1 namespace
-  kubectl get secrets --namespace=kubernetes-dashboard #get for specific
-  kubectl describe secret secret1                      # use token to login to dashboard
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+    kubectl proxy
+      starts dashboard + (http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.)
+    kubectl get secrets                                  # get for 1 namespace
+    kubectl get secrets                 -n kubernetes-dashboard #get for specific
+    kubectl describe secret secret1     -n kubernetes-dashboard # use token to login to dashboard
 logs 
   kubectl logs POD_NAME
 nodes
