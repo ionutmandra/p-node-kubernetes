@@ -72,10 +72,16 @@ general
 api
   kubectl api-versions
   list object types
-      In a namespace
-          kubectl api-resources --namespaced=true
-      Not in a namespace
-          kubectl api-resources --namespaced=false 
+    In a namespace
+        kubectl api-resources --namespaced=true
+    Not in a namespace
+        kubectl api-resources --namespaced=false
+  call api server
+    TOKEN = describe defatult secret.token
+    address = cat ~/kube/config + /version
+    ca cert copy from api server pod to local machine
+         kubectl cp kube-apiserver-docker-desktop:run/config/pki/ca.crt -n kube-system ./tmp/ca.crt
+    curl -X GET  --header "Authorization: Bearer $TOKEN" --cacert ./tmp/ca.crt  https://kubernetes.docker.internal:6443/version
 cluster
   kubectl config get-contexts #get clusters
   kubectl config current-context
