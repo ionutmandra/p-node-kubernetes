@@ -1,3 +1,3 @@
 # image: p-node-kubernetes_api-gateway:latest not working. Needs a version 'v1'
-image: p-node-kubernetes_api-gateway:v1
+image: p-node-kubernetes_api-gateway:v3
 public: false
